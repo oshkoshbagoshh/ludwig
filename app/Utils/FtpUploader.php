@@ -17,7 +17,7 @@ class FtpUploader {
         if ($this->ftpConn === false) {
             throw new Exception("Could not connect to FTP server.");
         }
-            
+        
         $login = ftp_login($this->ftpConn, $this->username, $this->password);
         if (!$login) {
             throw new Exception("FTP login failed.");

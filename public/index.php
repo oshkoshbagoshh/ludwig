@@ -108,7 +108,7 @@ ini_set("display_errors", 1);
 
 
 // define constants
-define('ROOT_PATH', dirname(__DIR___));
+define('ROOT_PATH', dirname(__DIR__));
 define('APP_PATH', ROOT_PATH . '/app');
 define('VIEW_PATH', ROOT_PATH . '/views');
 define('UPLOAD_PATH', ROOT_PATH . '/uploads');
@@ -200,10 +200,15 @@ function route($path)
 
     function getFileMetadata($filePath)
     {
-        $finfo = finfo_op[en](FILEINFO_MIME_TYPE);
+        // Ensure getID3 is loaded
+        if (!class_exists('getID3')) {
+            require_once ROOT_PATH . '/vendor/getid3/getid3/getid3.php';
+        }
+    
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mimeType = finfo_file($finfo, $filePath);
         finfo_close($finfo);
-
+    
         $metadata = [];
         if (strpos($mimeType, 'audio/') === 0) {
             $getID3 = new getID3();
