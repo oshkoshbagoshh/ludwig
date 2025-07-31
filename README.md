@@ -1,6 +1,6 @@
-# Music Platform
+# TFN Ludwig - CTV Music Platform
 
-A vanilla PHP music platform for managing and distributing music content with features for artists, licensing, and collaboration.
+A LAMP stack music platform for managing and distributing music content with features for artists, licensing, and collaboration.
 
 ## 🎵 Features
 
@@ -39,7 +39,10 @@ A vanilla PHP music platform for managing and distributing music content with fe
 
 ## 🛠️ Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/music-platform.git
-cd music-platform
+[//]: # (1. Clone the repository:)
+
+[//]: # (```bash)
+
+[//]: # (git clone https://github.com/yourusername/music-platform.git)
+
+[//]: # (cd music-platform)

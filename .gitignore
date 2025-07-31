@@ -1,2 +1,6 @@
 composer.json
 /vendor
+.idea/laravel-idea.xml
+.idea/php.xml
+.idea/tfn-ludwig.iml
+.idea/vcs.xml
