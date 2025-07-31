@@ -1,0 +1,71 @@
+{
+    "name": "aj/tfn-music-wip",
+    "description": "TFN Music Platform - Alpha version. Kantent Management collab",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "james-heinrich/getid3": "^1.0",
+        "botman/botman": "^2.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "league/climate": "^3.6",
+        "league/color-extractor": "^0.3",
+        "league/commonmark": "^2.3",
+        "league/config": "^1.2",
+        "league/csv": "^9.7",
+        "league/event": "^2.3",
+        "league/flysystem": "^3.0",
+        "league/glide": "^2.3",
+        "league/omnipay": "^3.0",
+        "league/route": "^4.1",
+        "league/uri": "^6.6",
+        "monolog/monolog": "^3.0",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "phpunit/phpunit": "^10.0",
+        "fakerphp/faker": "^1.21",
+        "league/factory-muffin": "^3.0",
+        "phpstan/phpstan": "^1.11",
+        "friendsofphp/php-cs-fixer": "^3.15",
+        "squizlabs/php_codesniffer": "^3.7",
+        "php-debugbar/php-debugbar": "^1.18"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AJ Javadi",
+            "email": "amirjavadi25@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit",
+        "serve": "php -S localhost:8000 -t public",
+        "analyse": "phpstan analyse src tests --level=max",
+        "cs-fix": "php-cs-fixer fix",
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "phpcs": "phpcs src tests",
+        "phpcbf": "phpcbf src tests"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform-check": false,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
+

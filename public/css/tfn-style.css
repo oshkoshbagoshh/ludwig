@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&family=Open+Sans:wght@400;700&display=swap'); /* TFN Branding Stylesheet */
+
+/* Color Palette */
+:root {
+    --indigo: #440381;
+    --blue-violet: #8338EC;
+    --electric-blue: #51E5FF;
+    --sapphire: #0056BF;
+    --sapphire-dark: #00449E;
+    --smoky-black: #100B00;
+    --white: #FFFFFF;
+}
+
+/* Import Google Fonts */
+
+/* Base Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--smoky-black);
+    background-color: var(--white);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: var(--indigo);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--indigo);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--indigo);
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+/* Backgrounds */
+.primary-bg {
+    background-color: var(--indigo);
+    color: var(--white);
+}
+
+.secondary-bg {
+    background-color: var(--blue-violet);
+    color: var(--white);
+}
+
+.accent {
+    color: var(--electric-blue);
+}
+
+.cta {
+    background-color: var(--sapphire);
+    color: var(--white);
+}
+
+/* Buttons */
+.button {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--sapphire);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--sapphire-dark);
+}
+
+/* Captions */
+.caption {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--blue-violet);
+    font-size: 0.9em;
+}
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+    border-bottom: 1px solid rgba(16, 11, 0, 0.2);
+}
+
+.section-hero-music,
+.section-hero-media {
+    text-align: center;
+}
+
+.section-hero-music h1,
+.section-hero-media h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--indigo);
+}
+
+.section-hero-music p,
+.section-hero-media p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    color: var(--smoky-black);
+}
+
+.section-cta {
+    text-align: center;
+}
+
+.section-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--indigo);
+}
+
+.email-link {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--indigo);
+}
+
+.email-link:hover,
+.email-link:focus {
+    text-decoration: underline;
+}
+
+.section-cta form {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-cta select {
+    flex: 1 1 60%;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    border: 1px solid #3a0a85;
+    border-radius: 5px;
+    color: var(--smoky-black);
+}
+
+.section-cta button {
+    flex: 1 1 30%;
+}
+
+/* Blog Section */
+.section-blog h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--indigo);
+    text-align: center;
+}
+
+.blog-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-links a {
+    display: block;
+    background-color: #d9cfff; /* lighter blue-violet */
+    color: var(--indigo);
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.blog-links a:hover,
+.blog-links a:focus {
+    background-color: var(--blue-violet);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.canva-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.canva-link a {
+    color: var(--blue-violet);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.canva-link a:hover,
+.canva-link a:focus {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-hero-music h1,
+    .section-hero-media h1 {
+        font-size: 2.25rem;
+    }
+
+    .section-cta form {
+        flex-direction: column;
+    }
+
+    .section-cta select,
+    .section-cta button {
+        flex: 1 1 100%;
+    }
+
+    .blog-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-links a {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+
