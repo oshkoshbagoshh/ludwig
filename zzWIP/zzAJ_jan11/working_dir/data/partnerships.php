@@ -31,6 +31,13 @@ function getPartnerships()
             'logo' => '/images/partners/damgoode/logo.png', // Add actual logo path
             'website' => '#',
         ],
+        [
+            'id' => 5,
+            'name' => 'Javadio',
+            'description' => 'Javadio is a technology resource hub for Music Producers, powered by Kantent CMS',
+            'logo' => '/images/partners/aj.svg',
+            'website' => 'javadio.io'
+        ]
     ];
 
     return $partners;
