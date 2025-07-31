@@ -2,12 +2,15 @@
 
 require_once __DIR__ . '/../Utils/FtpUploader.php';
 
-function handleFileUpload($file) {
+function handleFileUpload($file): array
+{
     try {
         // Local upload first
         $uploadDir = __DIR__ . '/../../uploads/';
         if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0755, true);
+            if (!mkdir($uploadDir, 0755, true) && !is_dir($uploadDir)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $uploadDir));
+            };
         }
 
         $fileName = time() . '_' . basename($file['name']);

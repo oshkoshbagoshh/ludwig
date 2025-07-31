@@ -1,14 +1,61 @@
 {
-    "require": {
-        "james-heinrich/getid3": "^1.9",
-      "ext-fileinfo": "*"
-    }
-  ,
+  "name": "oshkoshbagoshh/tfn-ludwig",
+  "description": "TFN Music Application - Ludwig development.",
+  "type": "project",
+  "require": {
+    "james-heinrich/getid3": "@stable",
+    "monolog/monolog": "@stable",
+    "league/config": "@stable",
+    "league/flysystem": "@stable",
+    "league/event": "@stable",
+    "league/route": "@stable",
+    "league/climate": "@stable",
+    "league/tactician": "@stable",
+    "league/uri": "@stable",
+    "league/glide": "@stable",
+    "league/commonmark": "@stable",
+    "league/color-extractor": "@stable",
+    "league/omnipay": "@stable",
+    "league/csv": "@stable",
+    "guzzle/http": "@stable",
+    "botman/botman": "@stable",
+    "ext-fileinfo": "*"
+  },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "phpunit/phpunit": "@stable",
     "vlucas/phpdotenv": "@stable",
     "fakerphp/faker": "@stable",
-    ""
-  }
+    "league/factory-muffin": "@stable",
+    "phpstan/phpstan": "@stable",
+    "friendsofphp/php-cs-fixer": "@stable",
+    "squizlabs/php_codesniffer": "@stable",
+    "php-debugbar/php-debugbar": "@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "serve": "php -S localhost:8000 -t public",
+    "analyse": "phpstan analyse src tests --level=max",
+    "cs-fix": "php-cs-fixer fix",
+    "cs-check": "php-cs-fixer fix --dry-run --diff",
+    "phpcs": "phpcs src tests",
+    "phpcbf": "phpcbf src tests"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "platform-check": false
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }

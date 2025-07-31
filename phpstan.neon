@@ -1,0 +1,18 @@
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+    autoload_files:
+        - %rootDir%/../../../vendor/autoload.php
+
+    checkMissingIterableValueType: true
+    checkGenericClassInNonGenericObjectType: true
+    checkMissingVarTagType: true
+
+    ignoreErrors:
+        # Example: Ignore errors about missing classes or methods if needed
+        # - message: '#Some error regex#'
+        #   paths:
+        #       - src/LegacyCode.php
+
