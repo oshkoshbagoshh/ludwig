@@ -1,0 +1,84 @@
+{
+    "listings": [
+        {
+            "title": "Senior Laravel Architect",
+            "tags": "laravel, vue.js, docker, aws",
+            "company": "TechFlow Solutions",
+            "location": "Austin, TX",
+            "email": "careers@techflow.io",
+            "website": "https://www.techflow.io",
+            "salary_range": "$120,000 - $160,000",
+            "description": "We're seeking a Senior Laravel Architect to lead our enterprise solutions team. You'll be responsible for designing scalable applications, mentoring junior developers, and implementing best practices across our microservices architecture. Experience with Laravel Nova, Vapor, and enterprise-scale applications is essential.",
+            "requirements": [
+                "8+ years of PHP/Laravel experience",
+                "Strong background in cloud architecture",
+                "Experience with CI/CD pipelines",
+                "Team leadership experience"
+            ]
+        },
+        {
+            "title": "Full-Stack Laravel Developer",
+            "tags": "laravel, react, typescript, postgresql",
+            "company": "Digital Nexus",
+            "location": "Miami, FL",
+            "email": "hr@digitalnexus.tech",
+            "website": "https://www.digitalnexus.tech",
+            "salary_range": "$90,000 - $130,000",
+            "description": "Join our dynamic team building next-generation digital transformation solutions. We're looking for a Full-Stack Laravel Developer who can bridge the gap between frontend and backend development, creating seamless user experiences.",
+            "requirements": [
+                "5+ years of full-stack development",
+                "Strong Laravel and React expertise",
+                "Experience with REST APIs",
+                "Knowledge of modern CSS frameworks"
+            ]
+        },
+        {
+            "title": "Laravel/Vue.js Developer",
+            "tags": "laravel, vue.js, tailwind, redis",
+            "company": "Quantum Code Labs",
+            "location": "Denver, CO",
+            "email": "join@quantumcodelabs.com",
+            "website": "https://www.quantumcodelabs.com",
+            "salary_range": "$85,000 - $120,000",
+            "description": "Quantum Code Labs is seeking a Laravel/Vue.js developer to join our product team. You'll work on innovative SaaS products using cutting-edge technologies and best practices in modern web development.",
+            "requirements": [
+                "4+ years Laravel experience",
+                "Strong Vue.js knowledge",
+                "Experience with SPA development",
+                "Understanding of UX principles"
+            ]
+        },
+        {
+            "title": "Senior Backend Engineer",
+            "tags": "laravel, php8, kubernetes, microservices",
+            "company": "CloudSphere Inc",
+            "location": "Seattle, WA",
+            "email": "talent@cloudsphere.cloud",
+            "website": "https://www.cloudsphere.cloud",
+            "salary_range": "$130,000 - $180,000",
+            "description": "CloudSphere is looking for a Senior Backend Engineer to help scale our cloud-native applications. You'll work with our platform team to build robust, scalable services that power our cloud management platform.",
+            "requirements": [
+                "7+ years backend development",
+                "Experience with microservices",
+                "Strong DevOps background",
+                "Performance optimization expertise"
+            ]
+        },
+        {
+            "title": "Laravel Security Engineer",
+            "tags": "laravel, security, api, oauth",
+            "company": "CyberGuard Technologies",
+            "location": "Boston, MA",
+            "email": "recruiting@cyberguard.sec",
+            "website": "https://www.cyberguard.sec",
+            "salary_range": "$110,000 - $150,000",
+            "description": "Join our security-focused development team building secure, enterprise-grade Laravel applications. You'll be responsible for implementing security best practices, conducting code reviews, and ensuring our applications meet the highest security standards.",
+            "requirements": [
+                "6+ years Laravel development",
+                "Strong security background",
+                "OAuth2 and JWT expertise",
+                "Experience with security audits"
+            ]
+        }
+    ]
+}

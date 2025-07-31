@@ -1,0 +1,180 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "The Rise of CTV: How Streaming is Revolutionizing Television Advertising",
+      "slug": "rise-of-ctv-streaming-revolutionizing-television-advertising",
+      "author": {
+        "id": 1,
+        "name": "Michael Roberts",
+        "role": "Digital Media Strategist",
+        "avatar": "/storage/authors/michael-roberts.jpg"
+      },
+      "published_at": "2024-01-10T08:00:00Z",
+      "updated_at": "2024-01-10T08:00:00Z",
+      "category": "CTV Strategy",
+      "reading_time": 8,
+      "content_preview": "As traditional cable viewership continues to decline, Connected TV (CTV) has emerged as the new frontier for advertisers seeking to reach engaged audiences...",
+      "featured_image": "/storage/blog/ctv-revolution.jpg",
+      "tags": ["CTV", "Streaming", "Digital Advertising", "Television", "Media Buying"],
+      "status": "published"
+    },
+    {
+      "id": 2,
+      "title": "Programmatic CTV: Understanding the Automated Advertising Landscape",
+      "slug": "programmatic-ctv-understanding-automated-advertising-landscape",
+      "author": {
+        "id": 2,
+        "name": "Sarah Chen",
+        "role": "Programmatic Expert",
+        "avatar": "/storage/authors/sarah-chen.jpg"
+      },
+      "published_at": "2024-01-12T09:30:00Z",
+      "updated_at": "2024-01-12T09:30:00Z",
+      "category": "Programmatic Advertising",
+      "reading_time": 10,
+      "content_preview": "Programmatic CTV buying has transformed how advertisers reach their target audiences. Learn about real-time bidding, audience segmentation...",
+      "featured_image": "/storage/blog/programmatic-landscape.jpg",
+      "tags": ["Programmatic", "RTB", "Ad Tech", "Automation", "Media Buying"],
+      "status": "published"
+    },
+    {
+      "id": 3,
+      "title": "Measuring Success: Analytics and Attribution in CTV Campaigns",
+      "slug": "measuring-success-analytics-attribution-ctv-campaigns",
+      "author": {
+        "id": 3,
+        "name": "David Thompson",
+        "role": "Analytics Director",
+        "avatar": "/storage/authors/david-thompson.jpg"
+      },
+      "published_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z",
+      "category": "Analytics",
+      "reading_time": 12,
+      "content_preview": "Understanding the impact of your CTV campaigns requires sophisticated measurement tools and attribution models. Discover how to track...",
+      "featured_image": "/storage/blog/ctv-analytics.jpg",
+      "tags": ["Analytics", "Attribution", "ROI", "Measurement", "Data"],
+      "status": "published"
+    },
+    {
+      "id": 4,
+      "title": "First-Party Data Integration in CTV Advertising",
+      "slug": "first-party-data-integration-ctv-advertising",
+      "author": {
+        "id": 4,
+        "name": "Rachel Martinez",
+        "role": "Data Strategy Lead",
+        "avatar": "/storage/authors/rachel-martinez.jpg"
+      },
+      "published_at": "2024-01-18T11:00:00Z",
+      "updated_at": "2024-01-18T11:00:00Z",
+      "category": "Data Strategy",
+      "reading_time": 9,
+      "content_preview": "With the deprecation of third-party cookies, first-party data has become crucial for CTV advertising success. Learn how to leverage your data...",
+      "featured_image": "/storage/blog/first-party-data.jpg",
+      "tags": ["First-Party Data", "Privacy", "Data Strategy", "Targeting"],
+      "status": "published"
+    },
+    {
+      "id": 5,
+      "title": "Cross-Screen Advertising: Integrating CTV with Digital Campaigns",
+      "slug": "cross-screen-advertising-integrating-ctv-digital-campaigns",
+      "author": {
+        "id": 5,
+        "name": "Jennifer Wilson",
+        "role": "Media Integration Specialist",
+        "avatar": "/storage/authors/jennifer-wilson.jpg"
+      },
+      "published_at": "2024-01-20T09:00:00Z",
+      "updated_at": "2024-01-20T09:00:00Z",
+      "category": "Cross-Platform Strategy",
+      "reading_time": 11,
+      "content_preview": "Creating seamless experiences across devices is crucial in today's fragmented media landscape. Discover strategies for integrating CTV...",
+      "featured_image": "/storage/blog/cross-screen.jpg",
+      "tags": ["Cross-Screen", "Integration", "Omnichannel", "Campaign Strategy"],
+      "status": "published"
+    },
+    {
+      "id": 6,
+      "title": "The Future of Addressable TV Advertising",
+      "slug": "future-addressable-tv-advertising",
+      "author": {
+        "id": 6,
+        "name": "Alex Kumar",
+        "role": "Innovation Director",
+        "avatar": "/storage/authors/alex-kumar.jpg"
+      },
+      "published_at": "2024-01-22T10:30:00Z",
+      "updated_at": "2024-01-22T10:30:00Z",
+      "category": "Innovation",
+      "reading_time": 10,
+      "content_preview": "Addressable TV is evolving rapidly with new technologies and targeting capabilities. Explore the latest innovations and what's coming next...",
+      "featured_image": "/storage/blog/addressable-tv.jpg",
+      "tags": ["Addressable TV", "Innovation", "Future Trends", "Technology"],
+      "status": "published"
+    },
+    {
+      "id": 7,
+      "title": "Creative Best Practices for CTV Advertising",
+      "slug": "creative-best-practices-ctv-advertising",
+      "author": {
+        "id": 7,
+        "name": "Emily Parker",
+        "role": "Creative Director",
+        "avatar": "/storage/authors/emily-parker.jpg"
+      },
+      "published_at": "2024-01-25T09:00:00Z",
+      "updated_at": "2024-01-25T09:00:00Z",
+      "category": "Creative Strategy",
+      "reading_time": 8,
+      "content_preview": "Creating effective CTV ad creative requires understanding the unique aspects of the medium. Learn about best practices for engagement...",
+      "featured_image": "/storage/blog/creative-practices.jpg",
+      "tags": ["Creative", "Design", "Ad Production", "Engagement"],
+      "status": "published"
+    },
+    {
+      "id": 8,
+      "title": "Privacy and Compliance in CTV Advertising",
+      "slug": "privacy-compliance-ctv-advertising",
+      "author": {
+        "id": 8,
+        "name": "Mark Anderson",
+        "role": "Privacy Compliance Officer",
+        "avatar": "/storage/authors/mark-anderson.jpg"
+      },
+      "published_at": "2024-01-28T11:00:00Z",
+      "updated_at": "2024-01-28T11:00:00Z",
+      "category": "Privacy & Compliance",
+      "reading_time": 9,
+      "content_preview": "Navigate the complex landscape of privacy regulations and compliance requirements in CTV advertising. Understanding GDPR, CCPA...",
+      "featured_image": "/storage/blog/privacy-compliance.jpg",
+      "tags": ["Privacy", "Compliance", "Regulations", "Data Protection"],
+      "status": "published"
+    }
+  ],
+  "metadata": {
+    "total_posts": 8,
+    "categories": [
+      "CTV Strategy",
+      "Programmatic Advertising",
+      "Analytics",
+      "Data Strategy",
+      "Cross-Platform Strategy",
+      "Innovation",
+      "Creative Strategy",
+      "Privacy & Compliance"
+    ],
+    "popular_tags": [
+      "CTV",
+      "Digital Advertising",
+      "Programmatic",
+      "Analytics",
+      "First-Party Data",
+      "Cross-Screen",
+      "Privacy",
+      "Creative"
+    ],
+    "last_updated": "2024-01-28T11:00:00Z"
+  }
+}

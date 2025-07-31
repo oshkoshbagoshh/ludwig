@@ -1,0 +1,119 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "role": "Marketing Director",
+      "company": "TechCorp Solutions",
+      "content": "Working with this team has transformed our digital presence. Their attention to detail and innovative solutions helped us achieve a 150% increase in user engagement within just three months. The responsive design and seamless user experience they delivered exceeded our expectations.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar1.jpg",
+      "industry": "Technology",
+      "date": "2024-01-02"
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "role": "CEO",
+      "company": "Innovate Industries",
+      "content": "The level of professionalism and expertise demonstrated by the team is outstanding. They didn't just build a website; they created a digital ecosystem that perfectly represents our brand identity. Their agile approach and constant communication made the entire process smooth and efficient.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar2.jpg",
+      "industry": "Manufacturing",
+      "date": "2024-01-05"
+    },
+    {
+      "id": 3,
+      "name": "Emily Rodriguez",
+      "role": "E-commerce Manager",
+      "company": "StyleHub Boutique",
+      "content": "Our online sales have increased by 200% since launching our new e-commerce platform. The integration of payment systems and inventory management is flawless, and the mobile-first approach has significantly improved our customer engagement rates.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar3.jpg",
+      "industry": "Retail",
+      "date": "2024-01-08"
+    },
+    {
+      "id": 4,
+      "name": "David Kim",
+      "role": "Operations Director",
+      "company": "HealthTech Solutions",
+      "content": "The custom healthcare portal they developed has streamlined our patient management process completely. The attention to HIPAA compliance and data security, combined with an intuitive interface, has made this investment invaluable to our practice.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar4.jpg",
+      "industry": "Healthcare",
+      "date": "2024-01-10"
+    },
+    {
+      "id": 5,
+      "name": "Rachel Thompson",
+      "role": "Creative Director",
+      "company": "Digital Creatives Co",
+      "content": "As a design agency, we had high expectations for our website's aesthetic and functionality. The team delivered a stunning platform that perfectly showcases our portfolio and has helped us attract high-profile clients. The CMS is a dream to work with.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar5.jpg",
+      "industry": "Creative Services",
+      "date": "2024-01-12"
+    },
+    {
+      "id": 6,
+      "name": "James Wilson",
+      "role": "Founder",
+      "company": "EduTech Academy",
+      "content": "The learning management system they developed has revolutionized how we deliver online courses. The user interface is intuitive for both instructors and students, and the performance analytics have been crucial for our growth strategy.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar6.jpg",
+      "industry": "Education",
+      "date": "2024-01-13"
+    },
+    {
+      "id": 7,
+      "name": "Lisa Martinez",
+      "role": "Product Manager",
+      "company": "FinServ Solutions",
+      "content": "The financial dashboard they created has transformed how we present data to our clients. The real-time analytics and custom reporting features have given us a significant competitive advantage in the market.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar7.jpg",
+      "industry": "Financial Services",
+      "date": "2024-01-15"
+    },
+    {
+      "id": 8,
+      "name": "Alex Foster",
+      "role": "Digital Strategist",
+      "company": "Growth Marketing Pro",
+      "content": "Their expertise in SEO and performance optimization has been game-changing for our clients. The websites they develop consistently achieve top rankings and impressive conversion rates. Working with them has helped us deliver exceptional results to our clients.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar8.jpg",
+      "industry": "Marketing",
+      "date": "2024-01-17"
+    },
+    {
+      "id": 9,
+      "name": "Sophie Anderson",
+      "role": "UX Director",
+      "company": "User First Design",
+      "content": "The attention to user experience and accessibility in their work is impressive. They don't just follow best practices; they set new standards. The websites they develop are beautiful and functional across all devices.",
+      "rating": 5,
+      "avatar": "/storage/testimonials/avatar9.jpg",
+      "industry": "Design",
+      "date": "2024-01-19"
+    }
+  ],
+  "metadata": {
+    "total_count": 9,
+    "average_rating": 5.0,
+    "industries_represented": [
+      "Technology",
+      "Manufacturing",
+      "Retail",
+      "Healthcare",
+      "Creative Services",
+      "Education",
+      "Financial Services",
+      "Marketing",
+      "Design"
+    ],
+    "last_updated": "2024-01-19"
+  }
+}

@@ -1,8 +1,9 @@
 {
-    "name": "aj/tfn-music-wip",
+    "name": "oshkoshbagoshh/tfn-ludgwig",
     "description": "TFN Music Platform - Alpha version. Kantent Management collab",
     "type": "project",
     "require": {
+        "php": "^8.2",
         "vlucas/phpdotenv": "^5.5",
         "james-heinrich/getid3": "^1.0",
         "botman/botman": "^2.0",

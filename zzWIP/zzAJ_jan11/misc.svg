@@ -1,0 +1,79 @@
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0056BF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8338EC;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Add a filter for some soft blur effect -->
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="20" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#000" />
+
+  <!-- Animated blobs -->
+  <g filter="url(#blur)">
+    <!-- Blob 1 -->
+    <path fill="url(#gradient)">
+      <animate
+        attributeName="d"
+        dur="20s"
+        repeatCount="indefinite"
+        values="
+          M 90,90 C 90,90 140,90 140,90 C 190,90 190,140 190,140 C 190,190 140,190 140,190 C 90,190 90,140 90,140 Z;
+          M 100,70 C 120,70 160,70 180,70 C 200,70 220,120 220,140 C 220,160 200,210 180,210 C 160,210 120,210 100,210 C 80,210 60,160 60,140 C 60,120 80,70 100,70 Z;
+          M 90,90 C 90,90 140,90 140,90 C 190,90 190,140 190,140 C 190,190 140,190 140,190 C 90,190 90,140 90,140 Z"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 50 50; 0 0"
+        dur="15s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <!-- Blob 2 -->
+    <path fill="url(#gradient)" opacity="0.7">
+      <animate
+        attributeName="d"
+        dur="15s"
+        repeatCount="indefinite"
+        values="
+          M 200,200 C 200,200 250,200 250,200 C 300,200 300,250 300,250 C 300,300 250,300 250,300 C 200,300 200,250 200,250 Z;
+          M 220,180 C 240,180 280,180 300,180 C 320,180 340,230 340,250 C 340,270 320,320 300,320 C 280,320 240,320 220,320 C 200,320 180,270 180,250 C 180,230 200,180 220,180 Z;
+          M 200,200 C 200,200 250,200 250,200 C 300,200 300,250 300,250 C 300,300 250,300 250,300 C 200,300 200,250 200,250 Z"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; -50 -50; 0 0"
+        dur="12s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <!-- Blob 3 -->
+    <path fill="url(#gradient)" opacity="0.5">
+      <animate
+        attributeName="d"
+        dur="18s"
+        repeatCount="indefinite"
+        values="
+          M 150,150 C 150,150 200,150 200,150 C 250,150 250,200 250,200 C 250,250 200,250 200,250 C 150,250 150,200 150,200 Z;
+          M 170,130 C 190,130 230,130 250,130 C 270,130 290,180 290,200 C 290,220 270,270 250,270 C 230,270 190,270 170,270 C 150,270 130,220 130,200 C 130,180 150,130 170,130 Z;
+          M 150,150 C 150,150 200,150 200,150 C 250,150 250,200 250,200 C 250,250 200,250 200,250 C 150,250 150,200 150,200 Z"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 30 -30; 0 0"
+        dur="20s"
+        repeatCount="indefinite"
+      />
+    </path>
+  </g>
+</svg>

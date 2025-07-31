@@ -1,0 +1,198 @@
+<!-- Hero Section -->
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<h1>
+				Welcome to TFNMS
+			</h1>
+			<p>
+				Your one-stop solution for media and music services
+			</p><a href="#contact" class="btn">Get Started</a>
+		</div>
+	</div>
+</section><!-- Services Section -->
+<section id="services" class="services">
+	<div class="container">
+		<h2>
+			Our Services
+		</h2>
+		<div class="services-grid">
+			<div class="service-item">
+				<img src="sandbox://RexdRfmnkN.png" alt="Video Production" class="service-icon">
+				<h3>
+					Video Production
+				</h3>
+				<p>
+					Professional video production for all your needs.
+				</p>
+			</div>
+			<div class="service-item">
+				<img src="sandbox://RexdRfmnkN.png" alt="Audio Recording" class="service-icon">
+				<h3>
+					Audio Recording
+				</h3>
+				<p>
+					State-of-the-art audio recording and editing services.
+				</p>
+			</div>
+			<div class="service-item">
+				<img src="sandbox://RexdRfmnkN.png" alt="Music Composition" class="service-icon">
+				<h3>
+					Music Composition
+				</h3>
+				<p>
+					Custom music composition for your projects.
+				</p>
+			</div>
+			<div class="service-item">
+				<img src="sandbox://RexdRfmnkN.png" alt="Streaming Services" class="service-icon">
+				<h3>
+					Streaming Services
+				</h3>
+				<p>
+					High-quality streaming solutions for your content.
+				</p>
+			</div>
+		</div>
+	</div>
+</section><!-- FAQ Section -->
+<section id="faq" class="faq">
+	<div class="container">
+		<h2>
+			Frequently Asked Questions
+		</h2>
+		<div class="faq-item">
+			<div class="faq-question">
+				What types of projects do you work on?
+			</div>
+			<div class="faq-answer">
+				We work on a wide range of projects including music videos, commercials, short films, and corporate videos.
+			</div>
+		</div>
+		<div class="faq-item">
+			<div class="faq-question">
+				How long does a typical project take?
+			</div>
+			<div class="faq-answer">
+				Project timelines vary depending on the scope and complexity. We'll provide a detailed timeline during our initial consultation.
+			</div>
+		</div>
+		<div class="faq-item">
+			<div class="faq-question">
+				Do you offer remote services?
+			</div>
+			<div class="faq-answer">
+				Yes, we offer remote services for many of our offerings, including music composition and audio editing.
+			</div>
+		</div>
+	</div>
+</section><!-- About Me Section -->
+<section id="about" class="about-me">
+	<div class="container">
+		<h2>
+			About Me
+		</h2>
+		<div class="about-content">
+			<div class="about-image">
+				<img src="sandbox://iJYmabigQl.png" alt="About Me">
+			</div>
+			<div class="about-text">
+				<p>
+					Hi, I'm [Your Name], founder of TFNMS. With over 10 years of experience in the media and music industry, I've worked on projects ranging from indie films to major label music productions. My passion is helping creators bring their vision to life through the power of audio and visual media.
+				</p>
+				<p>
+					At TFNMS, we believe in the power of storytelling through media. Whether you're a musician looking to produce your next hit or a business needing a compelling video ad, we're here to help you every step of the way.
+				</p>
+			</div>
+		</div>
+	</div>
+</section><!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+	<div class="container">
+		<h2>
+			What Our Clients Say
+		</h2>
+		<div class="testimonial-grid">
+			<div class="testimonial-item">
+				<p>
+					"TFNMS helped us create an amazing video for our product launch. The quality and creativity were beyond our expectations!"
+				</p>
+				<p>
+					- John D., Tech Startup CEO
+				</p>
+			</div>
+			<div class="testimonial-item">
+				<p>
+					"The music composition service is top-notch. They really understood the mood we were going for in our short film."
+				</p>
+				<p>
+					- Sarah L., Independent Filmmaker
+				</p>
+			</div>
+			<div class="testimonial-item">
+				<p>
+					"Professional, responsive, and incredibly talented. TFNMS is our go-to for all our audio needs."
+				</p>
+				<p>
+					- Mike R., Podcast Producer
+				</p>
+			</div>
+		</div>
+	</div>
+</section><!-- Contact Us Section -->
+<section id="contact" class="contact">
+	<div class="container">
+		<h2>
+			Get in Touch
+		</h2>
+		<form class="contact-form">
+			<div class="form-group">
+				<label for="name">Name</label> <input type="text" id="name" name="name" required="">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input type="email" id="email" name="email" required="">
+			</div>
+			<div class="form-group">
+				<label for="service">Service Interested In</label> <select id="service" name="service" required="">
+					<option value="">
+						Select a service
+					</option>
+					<option value="video">
+						Video Production
+					</option>
+					<option value="audio">
+						Audio Recording
+					</option>
+					<option value="music">
+						Music Composition
+					</option>
+					<option value="streaming">
+						Streaming Services
+					</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="message">Message</label> 
+				<textarea id="message" name="message" required=""></textarea>
+			</div><button type="submit" class="btn">Send Message</button>
+		</form>
+	</div>
+</section>
+<script>
+    // FAQ Toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Form Submission (you'll need to implement the actual form submission logic)
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Form submitted! We\'ll get back to you soon.');
+    });
+</script>

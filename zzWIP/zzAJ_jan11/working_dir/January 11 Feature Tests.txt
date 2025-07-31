@@ -1,0 +1,6 @@
+TODO: test you're able to markdown
+TODO: test you're able to DOCx
+TODO: you're able to work with XML
+TODO: you're able to upload document and render it as a blog post via DOM Manipulation library
+
+
