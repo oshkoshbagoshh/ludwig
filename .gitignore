@@ -1,6 +1,127 @@
-composer.json
-/vendor
-.idea/laravel-idea.xml
-.idea/php.xml
-.idea/tfn-ludwig.iml
-.idea/vcs.xml
+### AJ_PHP template
+# PHP Development
+#---------------
+## Composer
+/vendor/
+composer.phar
+
+## PHP CS Fixer
+.php-cs-fixer.cache
+.php-cs-fixer.php
+
+## PHPUnit
+.phpunit.result.cache
+.phpunit.cache
+/app/phpunit.xml
+/phpunit.xml
+/build/
+
+## PHP_CodeSniffer
+phpcs.xml
+/wpcs/
+
+# Node.js Development
+#------------------
+## Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+## Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+## Runtime & Cache
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
+.grunt/
+.lock-wscript/
+.npm/
+.eslintcache
+.stylelintcache
+.node_repl_history
+
+## Build outputs
+dist/
+build/
+.next/
+.nuxt/
+.vuepress/dist/
+.docusaurus/
+.serverless/
+
+## Package management
+*.tgz
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+.yarn-integrity
+
+# IDE & Editors
+#-------------
+## PHPStorm & IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+## VSCode
+.vscode/
+.vscode-test/
+
+## Coverage & Analysis
+coverage/
+*.lcov
+.nyc_output/
+lib-cov/
+
+# Environment & System
+#-------------------
+## Environment Variables
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+## OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+## Temporary Files
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+
+# Project Specific
+#---------------
+## TypeScript
+*.tsbuildinfo
+
+## Test Coverage
+/coverage/
+
+## Database
+.dynamodb/
+
+## Misc
+.tern-port
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

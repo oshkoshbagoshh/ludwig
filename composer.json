@@ -1,0 +1,14 @@
+{
+    "require": {
+        "james-heinrich/getid3": "^1.9",
+      "ext-fileinfo": "*"
+    }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "@stable",
+    "vlucas/phpdotenv": "@stable",
+    "fakerphp/faker": "@stable",
+    ""
+  }
+}
