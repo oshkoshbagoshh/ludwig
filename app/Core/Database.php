@@ -11,6 +11,7 @@ use Exception;
  * 
  * Handles database connectivity and provides a PDO instance for database operations.
  * Supports both MySQL and SQLite connections based on configuration.
+ * TODO: add pgsql database connection config
  */
 class Database
 {
@@ -115,6 +116,27 @@ class Database
      * @return void
      * @throws PDOException If connection fails
      */
+
+
+    private function connectPgsql(): void
+    {
+        $host = $this->config['pgsql']['host'] ?? 'localhost';
+        $port = $this->config['pgsql']['port'] ?? 5432;
+        $database = $this->config['pgsql']['database'] ?? 'music_platform';
+        $username = $this->config['pgsql']['username'] ?? 'root';
+        $password = $this->config['pgsql']['password'] ?? '';
+
+        $dsn = "pgsql:host={$host};port={$port};dbname={$database}";
+
+        $this->connection = new PDO($dsn, $username, $password);
+    }
+
+    /**
+     * Connect to SQLite database
+     *
+     * @return void
+     * @throws PDOException If connection fails
+     */
     private function connectSqlite(): void
     {
         $path = $this->config['sqlite']['path'] ?? 'database/music.sqlite';
@@ -132,6 +154,7 @@ class Database
         
         $this->connection = new PDO("sqlite:{$path}");
     }
+
     
     /**
      * Begin a transaction

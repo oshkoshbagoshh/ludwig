@@ -1,38 +1,38 @@
 -- Users (for login & role)
 CREATE TABLE IF NOT EXISTS users (
-                                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                     id SERIAL PRIMARY KEY,
                                      email TEXT NOT NULL UNIQUE,
                                      password_hash TEXT NOT NULL,
                                      role TEXT NOT NULL DEFAULT 'guest',
-                                     created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                     updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Artists
 CREATE TABLE IF NOT EXISTS artists (
-                                       id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                       id SERIAL PRIMARY KEY,
                                        name TEXT NOT NULL,
                                        bio TEXT,
                                        avatar TEXT,
-                                       artist_of_week INTEGER NOT NULL DEFAULT 0,
-                                       created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                       updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                       artist_of_week BOOLEAN NOT NULL DEFAULT FALSE,
+                                       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Albums
 CREATE TABLE IF NOT EXISTS albums (
-                                      id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                      id SERIAL PRIMARY KEY,
                                       artist_id INTEGER NOT NULL REFERENCES artists(id) ON DELETE CASCADE,
                                       title TEXT NOT NULL,
                                       cover TEXT,
-                                      release_date TEXT,
-                                      created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                      release_date DATE,
+                                      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Tracks
 CREATE TABLE IF NOT EXISTS tracks (
-                                      id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                      id SERIAL PRIMARY KEY,
                                       artist_id INTEGER NOT NULL REFERENCES artists(id) ON DELETE CASCADE,
                                       album_id INTEGER REFERENCES albums(id) ON DELETE SET NULL,
                                       title TEXT NOT NULL,
@@ -40,34 +40,34 @@ CREATE TABLE IF NOT EXISTS tracks (
                                       file_path TEXT,
                                       bpm INTEGER,
                                       key_signature TEXT,
-                                      featured INTEGER NOT NULL DEFAULT 0,
+                                      featured BOOLEAN NOT NULL DEFAULT FALSE,
                                       preview_duration INTEGER NOT NULL DEFAULT 30,
-                                      created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Genres
 CREATE TABLE IF NOT EXISTS genres (
-                                      id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                      id SERIAL PRIMARY KEY,
                                       name TEXT NOT NULL UNIQUE,
-                                      created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Moods
 CREATE TABLE IF NOT EXISTS moods (
-                                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                     id SERIAL PRIMARY KEY,
                                      name TEXT NOT NULL UNIQUE,
-                                     created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                     updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Instruments
 CREATE TABLE IF NOT EXISTS instruments (
-                                           id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                           id SERIAL PRIMARY KEY,
                                            name TEXT NOT NULL UNIQUE,
-                                           created_at TEXT NOT NULL DEFAULT (datetime('now')),
-                                           updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                           updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Pivot track ↔ genre

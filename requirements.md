@@ -30,13 +30,17 @@ This document outlines the development plan for the combined CMS + Music Platfor
 - Authentication system
 - User roles and permissions
 
-### 3. CMS Features
+### 3. Kantent Management CMS Features
 - CRUD for blog posts
 - Import existing posts
 - Employee management module
-- Admin panel for online store
+- Admin panel for CRUD  / online store
 - REST API endpoints for content
 - CMS synchronization capabilities
+- Bandzoogle Artist Templates
+- Web form with color schema, big5 questionnaire, important links, campaign goals,etc
+- Blind date feature
+- 
 
 ### 4. Music Platform Core Features
 - Audio player implementation using Howler.js

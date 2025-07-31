@@ -2,313 +2,314 @@
 
 -- Blog Posts
 CREATE TABLE IF NOT EXISTS blog_posts (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    title TEXT NOT NULL,
-    slug TEXT NOT NULL UNIQUE,
-    content TEXT NOT NULL,
-    excerpt TEXT,
-    featured_image TEXT,
-    status TEXT NOT NULL DEFAULT 'draft', -- draft, published, archived
-    published_at TEXT,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                          id SERIAL PRIMARY KEY,
+                                          user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                                          title TEXT NOT NULL,
+                                          slug TEXT NOT NULL UNIQUE,
+                                          content TEXT NOT NULL,
+                                          excerpt TEXT,
+                                          featured_image TEXT,
+                                          status TEXT NOT NULL DEFAULT 'draft', -- draft, published, archived
+                                          published_at TIMESTAMPTZ,
+                                          created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                          updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Blog Categories
 CREATE TABLE IF NOT EXISTS blog_categories (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL UNIQUE,
-    slug TEXT NOT NULL UNIQUE,
-    description TEXT,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                               id SERIAL PRIMARY KEY,
+                                               name TEXT NOT NULL UNIQUE,
+                                               slug TEXT NOT NULL UNIQUE,
+                                               description TEXT,
+                                               created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                               updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Pivot blog_post ↔ blog_category
 CREATE TABLE IF NOT EXISTS blog_post_categories (
-    post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
-    category_id INTEGER NOT NULL REFERENCES blog_categories(id) ON DELETE CASCADE,
-    PRIMARY KEY (post_id, category_id)
+                                                    post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
+                                                    category_id INTEGER NOT NULL REFERENCES blog_categories(id) ON DELETE CASCADE,
+                                                    PRIMARY KEY (post_id, category_id)
 );
 
 -- Blog Tags
 CREATE TABLE IF NOT EXISTS blog_tags (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL UNIQUE,
-    slug TEXT NOT NULL UNIQUE,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                         id SERIAL PRIMARY KEY,
+                                         name TEXT NOT NULL UNIQUE,
+                                         slug TEXT NOT NULL UNIQUE,
+                                         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                         updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Pivot blog_post ↔ blog_tag
 CREATE TABLE IF NOT EXISTS blog_post_tags (
-    post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
-    tag_id INTEGER NOT NULL REFERENCES blog_tags(id) ON DELETE CASCADE,
-    PRIMARY KEY (post_id, tag_id)
+                                              post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
+                                              tag_id INTEGER NOT NULL REFERENCES blog_tags(id) ON DELETE CASCADE,
+                                              PRIMARY KEY (post_id, tag_id)
 );
 
 -- Blog Comments
 CREATE TABLE IF NOT EXISTS blog_comments (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
-    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
-    parent_id INTEGER REFERENCES blog_comments(id) ON DELETE CASCADE,
-    author_name TEXT,
-    author_email TEXT,
-    content TEXT NOT NULL,
-    status TEXT NOT NULL DEFAULT 'pending', -- pending, approved, spam
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                             id SERIAL PRIMARY KEY,
+                                             post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
+                                             user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+                                             parent_id INTEGER REFERENCES blog_comments(id) ON DELETE CASCADE,
+                                             author_name TEXT,
+                                             author_email TEXT,
+                                             content TEXT NOT NULL,
+                                             status TEXT NOT NULL DEFAULT 'pending', -- pending, approved, spam
+                                             created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                             updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Employees
 CREATE TABLE IF NOT EXISTS employees (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
-    name TEXT NOT NULL,
-    position TEXT NOT NULL,
-    department TEXT NOT NULL,
-    bio TEXT,
-    photo TEXT,
-    email TEXT,
-    phone TEXT,
-    hire_date TEXT,
-    status TEXT NOT NULL DEFAULT 'active', -- active, inactive
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                         id SERIAL PRIMARY KEY,
+                                         user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+                                         name TEXT NOT NULL,
+                                         position TEXT NOT NULL,
+                                         department TEXT NOT NULL,
+                                         bio TEXT,
+                                         photo TEXT,
+                                         email TEXT,
+                                         phone TEXT,
+                                         hire_date DATE,
+                                         status TEXT NOT NULL DEFAULT 'active', -- active, inactive
+                                         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                         updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Store Products
 CREATE TABLE IF NOT EXISTS store_products (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    slug TEXT NOT NULL UNIQUE,
-    description TEXT,
-    price REAL NOT NULL,
-    sale_price REAL,
-    stock INTEGER NOT NULL DEFAULT 0,
-    sku TEXT UNIQUE,
-    featured INTEGER NOT NULL DEFAULT 0,
-    status TEXT NOT NULL DEFAULT 'draft', -- draft, published, archived
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                              id SERIAL PRIMARY KEY,
+                                              name TEXT NOT NULL,
+                                              slug TEXT NOT NULL UNIQUE,
+                                              description TEXT,
+                                              price NUMERIC NOT NULL,
+                                              sale_price NUMERIC,
+                                              stock INTEGER NOT NULL DEFAULT 0,
+                                              sku TEXT UNIQUE,
+                                              featured BOOLEAN NOT NULL DEFAULT FALSE,
+                                              status TEXT NOT NULL DEFAULT 'draft', -- draft, published, archived
+                                              created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                              updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Store Product Categories
 CREATE TABLE IF NOT EXISTS store_categories (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL UNIQUE,
-    slug TEXT NOT NULL UNIQUE,
-    description TEXT,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                                id SERIAL PRIMARY KEY,
+                                                name TEXT NOT NULL UNIQUE,
+                                                slug TEXT NOT NULL UNIQUE,
+                                                description TEXT,
+                                                created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                                updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Pivot store_product ↔ store_category
 CREATE TABLE IF NOT EXISTS store_product_categories (
-    product_id INTEGER NOT NULL REFERENCES store_products(id) ON DELETE CASCADE,
-    category_id INTEGER NOT NULL REFERENCES store_categories(id) ON DELETE CASCADE,
-    PRIMARY KEY (product_id, category_id)
+                                                        product_id INTEGER NOT NULL REFERENCES store_products(id) ON DELETE CASCADE,
+                                                        category_id INTEGER NOT NULL REFERENCES store_categories(id) ON DELETE CASCADE,
+                                                        PRIMARY KEY (product_id, category_id)
 );
 
 -- Store Product Images
 CREATE TABLE IF NOT EXISTS store_product_images (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    product_id INTEGER NOT NULL REFERENCES store_products(id) ON DELETE CASCADE,
-    image_path TEXT NOT NULL,
-    sort_order INTEGER NOT NULL DEFAULT 0,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                                    id SERIAL PRIMARY KEY,
+                                                    product_id INTEGER NOT NULL REFERENCES store_products(id) ON DELETE CASCADE,
+                                                    image_path TEXT NOT NULL,
+                                                    sort_order INTEGER NOT NULL DEFAULT 0,
+                                                    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                                    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Playlists
 CREATE TABLE IF NOT EXISTS playlists (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    name TEXT NOT NULL,
-    description TEXT,
-    cover_image TEXT,
-    is_public INTEGER NOT NULL DEFAULT 0,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                         id SERIAL PRIMARY KEY,
+                                         user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                                         name TEXT NOT NULL,
+                                         description TEXT,
+                                         cover_image TEXT,
+                                         is_public BOOLEAN NOT NULL DEFAULT FALSE,
+                                         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                         updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Pivot playlist ↔ track
 CREATE TABLE IF NOT EXISTS playlist_tracks (
-    playlist_id INTEGER NOT NULL REFERENCES playlists(id) ON DELETE CASCADE,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
-    sort_order INTEGER NOT NULL DEFAULT 0,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    PRIMARY KEY (playlist_id, track_id)
+                                               playlist_id INTEGER NOT NULL REFERENCES playlists(id) ON DELETE CASCADE,
+                                               track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+                                               sort_order INTEGER NOT NULL DEFAULT 0,
+                                               created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                               PRIMARY KEY (playlist_id, track_id)
 );
 
 -- Shopping Cart
 CREATE TABLE IF NOT EXISTS carts (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    session_id TEXT,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-    UNIQUE(user_id, session_id)
+                                     id SERIAL PRIMARY KEY,
+                                     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+                                     session_id TEXT,
+                                     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                     UNIQUE(user_id, session_id)
 );
 
 -- Cart Items for Tracks
 CREATE TABLE IF NOT EXISTS cart_tracks (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cart_id INTEGER NOT NULL REFERENCES carts(id) ON DELETE CASCADE,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
-    license_type TEXT NOT NULL DEFAULT 'standard', -- standard, extended, exclusive
-    price REAL NOT NULL,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-    UNIQUE(cart_id, track_id)
+                                           id SERIAL PRIMARY KEY,
+                                           cart_id INTEGER NOT NULL REFERENCES carts(id) ON DELETE CASCADE,
+                                           track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+                                           license_type TEXT NOT NULL DEFAULT 'standard', -- standard, extended, exclusive
+                                           price NUMERIC NOT NULL,
+                                           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                           updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                           UNIQUE(cart_id, track_id)
 );
 
 -- Cart Items for Store Products
 CREATE TABLE IF NOT EXISTS cart_products (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cart_id INTEGER NOT NULL REFERENCES carts(id) ON DELETE CASCADE,
-    product_id INTEGER NOT NULL REFERENCES store_products(id) ON DELETE CASCADE,
-    quantity INTEGER NOT NULL DEFAULT 1,
-    price REAL NOT NULL,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-    UNIQUE(cart_id, product_id)
+                                             id SERIAL PRIMARY KEY,
+                                             cart_id INTEGER NOT NULL REFERENCES carts(id) ON DELETE CASCADE,
+                                             product_id INTEGER NOT NULL REFERENCES store_products(id) ON DELETE CASCADE,
+                                             quantity INTEGER NOT NULL DEFAULT 1,
+                                             price NUMERIC NOT NULL,
+                                             created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                             updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                             UNIQUE(cart_id, product_id)
 );
 
 -- Orders
 CREATE TABLE IF NOT EXISTS orders (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
-    order_number TEXT NOT NULL UNIQUE,
-    status TEXT NOT NULL DEFAULT 'pending', -- pending, processing, completed, cancelled
-    total REAL NOT NULL,
-    subtotal REAL NOT NULL,
-    tax REAL NOT NULL DEFAULT 0,
-    discount REAL NOT NULL DEFAULT 0,
-    shipping REAL NOT NULL DEFAULT 0,
-    billing_name TEXT NOT NULL,
-    billing_email TEXT NOT NULL,
-    billing_phone TEXT,
-    billing_address TEXT,
-    billing_city TEXT,
-    billing_state TEXT,
-    billing_zip TEXT,
-    billing_country TEXT,
-    shipping_name TEXT,
-    shipping_address TEXT,
-    shipping_city TEXT,
-    shipping_state TEXT,
-    shipping_zip TEXT,
-    shipping_country TEXT,
-    payment_method TEXT,
-    payment_id TEXT,
-    notes TEXT,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                      id SERIAL PRIMARY KEY,
+                                      user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+                                      order_number TEXT NOT NULL UNIQUE,
+                                      status TEXT NOT NULL DEFAULT 'pending', -- pending, processing, completed, cancelled
+                                      total NUMERIC NOT NULL,
+                                      subtotal NUMERIC NOT NULL,
+                                      tax NUMERIC NOT NULL DEFAULT 0,
+                                      discount NUMERIC NOT NULL DEFAULT 0,
+                                      shipping NUMERIC NOT NULL DEFAULT 0,
+                                      billing_name TEXT NOT NULL,
+                                      billing_email TEXT NOT NULL,
+                                      billing_phone TEXT,
+                                      billing_address TEXT,
+                                      billing_city TEXT,
+                                      billing_state TEXT,
+                                      billing_zip TEXT,
+                                      billing_country TEXT,
+                                      shipping_name TEXT,
+                                      shipping_address TEXT,
+                                      shipping_city TEXT,
+                                      shipping_state TEXT,
+                                      shipping_zip TEXT,
+                                      shipping_country TEXT,
+                                      payment_method TEXT,
+                                      payment_id TEXT,
+                                      notes TEXT,
+                                      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Order Items for Tracks
 CREATE TABLE IF NOT EXISTS order_tracks (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE SET NULL,
-    track_name TEXT NOT NULL,
-    license_type TEXT NOT NULL,
-    price REAL NOT NULL,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                            id SERIAL PRIMARY KEY,
+                                            order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
+                                            track_id INTEGER REFERENCES tracks(id) ON DELETE SET NULL,
+                                            track_name TEXT NOT NULL,
+                                            license_type TEXT NOT NULL,
+                                            price NUMERIC NOT NULL,
+                                            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                            updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Order Items for Store Products
 CREATE TABLE IF NOT EXISTS order_products (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
-    product_id INTEGER REFERENCES store_products(id) ON DELETE SET NULL,
-    product_name TEXT NOT NULL,
-    quantity INTEGER NOT NULL,
-    price REAL NOT NULL,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                              id SERIAL PRIMARY KEY,
+                                              order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
+                                              product_id INTEGER REFERENCES store_products(id) ON DELETE SET NULL,
+                                              product_name TEXT NOT NULL,
+                                              quantity INTEGER NOT NULL,
+                                              price NUMERIC NOT NULL,
+                                              created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                              updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Track Licenses
 CREATE TABLE IF NOT EXISTS track_licenses (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL UNIQUE,
-    description TEXT,
-    price_multiplier REAL NOT NULL DEFAULT 1.0,
-    rights TEXT NOT NULL,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+                                              id SERIAL PRIMARY KEY,
+                                              name TEXT NOT NULL UNIQUE,
+                                              description TEXT,
+                                              price_multiplier NUMERIC NOT NULL DEFAULT 1.0,
+                                              rights TEXT NOT NULL,
+                                              created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                              updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Insert default license types
-INSERT OR IGNORE INTO track_licenses (name, description, price_multiplier, rights)
-VALUES 
+INSERT INTO track_licenses (name, description, price_multiplier, rights)
+VALUES
     ('Standard', 'Basic license for personal use', 1.0, 'Personal use only, no commercial rights'),
     ('Commercial', 'License for commercial projects', 2.0, 'Commercial use in one project, no resale'),
     ('Extended', 'Extended license for multiple commercial projects', 5.0, 'Multiple commercial projects, no resale'),
-    ('Exclusive', 'Exclusive rights to the track', 20.0, 'Full ownership and exclusive rights');
+    ('Exclusive', 'Exclusive rights to the track', 20.0, 'Full ownership and exclusive rights')
+ON CONFLICT (name) DO NOTHING;
 
 -- Track Prices
 CREATE TABLE IF NOT EXISTS track_prices (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
-    license_id INTEGER NOT NULL REFERENCES track_licenses(id) ON DELETE CASCADE,
-    price REAL NOT NULL,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-    UNIQUE(track_id, license_id)
+                                            id SERIAL PRIMARY KEY,
+                                            track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+                                            license_id INTEGER NOT NULL REFERENCES track_licenses(id) ON DELETE CASCADE,
+                                            price NUMERIC NOT NULL,
+                                            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                            updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                            UNIQUE(track_id, license_id)
 );
 
 -- User Purchased Tracks
 CREATE TABLE IF NOT EXISTS user_purchased_tracks (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
-    order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
-    license_type TEXT NOT NULL,
-    download_count INTEGER NOT NULL DEFAULT 0,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-    UNIQUE(user_id, track_id, order_id)
+                                                     id SERIAL PRIMARY KEY,
+                                                     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                                                     track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+                                                     order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
+                                                     license_type TEXT NOT NULL,
+                                                     download_count INTEGER NOT NULL DEFAULT 0,
+                                                     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                                     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                                     UNIQUE(user_id, track_id, order_id)
 );
 
 -- User Favorites
 CREATE TABLE IF NOT EXISTS user_favorites (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
-    created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    UNIQUE(user_id, track_id)
+                                              id SERIAL PRIMARY KEY,
+                                              user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                                              track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+                                              created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                              UNIQUE(user_id, track_id)
 );
 
 -- User Play History
 CREATE TABLE IF NOT EXISTS user_play_history (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
-    played_at TEXT NOT NULL DEFAULT (datetime('now')),
-    duration INTEGER NOT NULL DEFAULT 0
+                                                 id SERIAL PRIMARY KEY,
+                                                 user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+                                                 track_id INTEGER NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+                                                 played_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                                                 duration INTEGER NOT NULL DEFAULT 0
 );
 
 -- Extend users table with additional fields
-ALTER TABLE users ADD COLUMN first_name TEXT;
-ALTER TABLE users ADD COLUMN last_name TEXT;
-ALTER TABLE users ADD COLUMN avatar TEXT;
-ALTER TABLE users ADD COLUMN bio TEXT;
-ALTER TABLE users ADD COLUMN website TEXT;
-ALTER TABLE users ADD COLUMN social_twitter TEXT;
-ALTER TABLE users ADD COLUMN social_facebook TEXT;
-ALTER TABLE users ADD COLUMN social_instagram TEXT;
-ALTER TABLE users ADD COLUMN social_youtube TEXT;
-ALTER TABLE users ADD COLUMN newsletter_subscribed INTEGER NOT NULL DEFAULT 0;
-ALTER TABLE users ADD COLUMN last_login TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS first_name TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS last_name TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS avatar TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS bio TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS website TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS social_twitter TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS social_facebook TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS social_instagram TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS social_youtube TEXT;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS newsletter_subscribed BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS last_login TIMESTAMPTZ;
 
 -- Add duration field to tracks table if not exists
-ALTER TABLE tracks ADD COLUMN duration INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE tracks ADD COLUMN IF NOT EXISTS duration INTEGER NOT NULL DEFAULT 0;
 
 -- Create indexes for performance
 CREATE INDEX IF NOT EXISTS idx_blog_posts_user_id ON blog_posts(user_id);
