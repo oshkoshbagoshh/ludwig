@@ -10,10 +10,11 @@
 | – Sync with WP/CMS                | – Define routes/index.php                  |                                        |        |      |
 | – “Kantent” CMS core              | – Install Howler.js & basic player         |                                        |        |      |
 | – Legal / docs                    | – Authorization middleware                 |                                        |        |      |
-|                                   | – Modal for unauthenticated playback limit |                                        |        |      |
+| - db migrations                   | – Modal for unauthenticated playback limit |                                        |        |      |
 |                                   | – Playlist CRUD endpoints                  |                                        |        |      |
 |                                   | – “Create listing” form                    |                                        |        |      |
 |                                   | – Slack webhook + email on match           |                                        |        |      |
 |                                   | – Grid & search UI                         |                                        |        |      |
 |                                   | – Unit tests for all modules               |                                        |        |      |
 |                                   | – Clean-up & documentation                 |                                        |        |      |
+    
