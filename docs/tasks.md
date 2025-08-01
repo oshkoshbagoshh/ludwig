@@ -16,6 +16,20 @@ This document contains the tasks that need to be completed for the Music Platfor
   - [x] Password reset
   - [x] Session management
 - [x] User roles and permissions
+- [ ] Database migrations
+- [ ] Enums
+- [ ] Traits 
+- [ ] Interfaces
+- [ ] Services 
+- [ ] Kernel
+- [ ] Logging / Exceptions
+- [ ] cli guy "hey kan"
+- [ ] File / Media management
+- [ ] Seed the data with factory , seeders etc
+- [ ] Placeholder images / skeletons for dynamic content
+- [ ] REST API
+- [ ] ADMIN PANEL
+- [ ] CRUD
 
 ## Kantent Management CMS Features
 
