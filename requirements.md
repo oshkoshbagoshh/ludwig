@@ -37,10 +37,10 @@ This document outlines the development plan for the combined CMS + Music Platfor
 - Admin panel for CRUD  / online store
 - REST API endpoints for content
 - CMS synchronization capabilities
-- Bandzoogle Artist Templates
+- Bandzoogle Artist Templates using dynamo DB
 - Web form with color schema, big5 questionnaire, important links, campaign goals,etc
 - Blind date feature
-- 
+- Golden ticket
 
 ### 4. Music Platform Core Features
 - Audio player implementation using Howler.js

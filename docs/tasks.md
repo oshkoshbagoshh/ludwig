@@ -10,12 +10,12 @@ This document contains the tasks that need to be completed for the Music Platfor
 - [x] Genre model
 - [x] Mood model
 - [x] Playlist model
-- [ ] Authentication system
-  - [ ] User registration
-  - [ ] Login/logout
-  - [ ] Password reset
-  - [ ] Session management
-- [ ] User roles and permissions
+- [x] Authentication system
+  - [x] User registration
+  - [x] Login/logout
+  - [x] Password reset
+  - [x] Session management
+- [x] User roles and permissions
 
 ## Kantent Management CMS Features
 

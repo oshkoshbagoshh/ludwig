@@ -6,6 +6,7 @@ use App\Core\Model;
 use App\Core\Database;
 use App\Models\BlogPost;
 use App\Models\Playlist;
+use App\Models\Role;
 use DateTime;
 
 /**
@@ -110,6 +111,36 @@ class User extends Model
     }
     
     /**
+     * Get the user's role
+     * 
+     * @return Role|null The role or null if not found
+     */
+    public function getRole(): ?Role
+    {
+        if (isset($this->role_id)) {
+            $query = "
+                SELECT *
+                FROM roles
+                WHERE id = :id
+                LIMIT 1
+            ";
+        
+            $result = $this->db->fetch($query, [':id' => $this->role_id]);
+        
+            if ($result) {
+                return new Role($result);
+            }
+        }
+    
+        // Fallback to the role string if role_id is not set
+        if (isset($this->role)) {
+            return Role::findByName($this->role);
+        }
+    
+        return null;
+    }
+
+    /**
      * Check if the user has a specific role
      * 
      * @param string $role The role to check
@@ -117,9 +148,15 @@ class User extends Model
      */
     public function hasRole(string $role): bool
     {
-        return $this->role === $role;
-    }
+        $userRole = $this->getRole();
     
+        if (!$userRole) {
+            return false;
+        }
+    
+        return $userRole->name === $role;
+    }
+
     /**
      * Check if the user is an admin
      * 
@@ -128,6 +165,23 @@ class User extends Model
     public function isAdmin(): bool
     {
         return $this->hasRole('admin');
+    }
+
+    /**
+     * Check if the user has a specific permission
+     * 
+     * @param string $permission The permission to check
+     * @return bool True if the user has the permission
+     */
+    public function hasPermission(string $permission): bool
+    {
+        $role = $this->getRole();
+    
+        if (!$role) {
+            return false;
+        }
+    
+        return $role->hasPermission($permission);
     }
     
     /**
