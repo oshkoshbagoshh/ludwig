@@ -16,10 +16,10 @@ This document contains the tasks that need to be completed for the Music Platfor
   - [x] Password reset
   - [x] Session management
 - [x] User roles and permissions
-- [ ] Database migrations
-- [ ] Enums
-- [ ] Traits 
-- [ ] Interfaces
+- [x] Database migrations
+- [x] Enums
+- [x] Traits 
+- [x] Interfaces
 - [ ] Services 
 - [ ] Kernel
 - [ ] Logging / Exceptions
