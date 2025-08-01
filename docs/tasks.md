@@ -23,16 +23,22 @@ This document contains the tasks that need to be completed for the Music Platfor
 - [x] Services 
 - [x] Kernel
 - [x] Logging / Exceptions
-- [ ] cli guy "hey kan" - console command that allows for CLI command apps, (mainly for file/folder setup tasks,ie: create etc. and then it installs with boilerplate code, then users can just  "Search for $zz_boilerplate and then change it with their content or its tied to front end for via AJAX )
+- [x] cli guy "hey kan"
+  - console command that allows for CLI command apps, (mainly for file/folder setup tasks,ie: create etc. and then it installs with boilerplate code, then users can just  "Search for $zz_boilerplate and then change it with their content or its tied to front end for via AJAX )
+  - associative arrays can be passed from controllers, etc to the views. create commmand to create boilerplate site, with Home, About, Hero, Services, Contact, Blog, etc. etc. docs, etc.
 - php cli commands for git, backing up directories , archving, zzWIP, which makes uncommited "working_dir" / sandbox , etc. 
 -  
-- [ ] File / Media management
+- [ ] File / Media management. Create file manager view similar to dropbox that lets you sort by file type, upload date, etc 
+- [ ] create a job / service that analyses ID3 to get audio data, and image processing, etc.
+-  [ ] can also password encrypt folders/files with password protection
 - [ ] Seed the data with factory , seeders etc
-- [ ] Placeholder images / skeletons for dynamic content
+- [ ] Placeholder images / skeletons for dynamic content. use SVGs
 - [ ] REST API
 - [ ] ADMIN PANEL
 - [ ] CRUD
 - [ ] HTTP requesting with guzzlehttp or symphony web crawler, or puppeteer, etc.
+- [ ] craate list of HTTP routes we need to test on front end and expected returns
+- [ ] dashboard / reports overview of site traffic, audit, media management,etc.
 - 
 
 ## Kantent Management CMS Features
