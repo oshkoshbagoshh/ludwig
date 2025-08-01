@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+// Define the application root directory
+define('APP_ROOT', dirname(__DIR__));
+
+// Include the autoloader
+require APP_ROOT . '/vendor/autoload.php';
+
+// Import the CLI application
+use App\CLI\KanCLI;
+
+// Run the CLI application
+$cli = new KanCLI();
+$cli->run($argv);

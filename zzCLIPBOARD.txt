@@ -1,0 +1,24 @@
+// Partnerships opportunities:
+
+- Audius , Crypto tokens system
+- can be used to earn rewards with more engagement on the site , build up with pokemon badges, etc.
+- create feedback loop where more engagement leads to more rewards, and more rewards can be leveraged to increase outreach
+
+
+Crypto Wallets: Your Web3 Passport
+
+To use most Web3 services, at some point you’ll need a crypto wallet, but don’t let those words fool you into thinking some sort of scam is at play.
+
+In fact, crypto wallets are helpful storages of digital value that hold tokens or other digital assets native to the Web3 platforms you’re using, like $AUDIO, the native token of Audius.
+
+While there are hundreds of crypto wallets available, such as MetaMask (great for Ethereum-based apps) or Phantom (for Solana), on Audius, a basic crypto wallet is built-into your account to hold all of your $AUDIO in one place and can be directly withdrawn to your bank account.
+
+// TODO: big5 personality test
+// TODO: Crypto rewards / pokemon badge system
+// TODO: refactor to not use Bulmacss anymore and use retro windows98 CSS , and proprietary CSS.
+// TODO: still use sass or whatever for custom directies but create layouts, components , partials, etc.
+
+
+// TODO: create Desktop PHP version so it works as desktop app
+// TODO: native php to create iPhone app
+

@@ -20,16 +20,20 @@ This document contains the tasks that need to be completed for the Music Platfor
 - [x] Enums
 - [x] Traits 
 - [x] Interfaces
-- [ ] Services 
-- [ ] Kernel
-- [ ] Logging / Exceptions
-- [ ] cli guy "hey kan"
+- [x] Services 
+- [x] Kernel
+- [x] Logging / Exceptions
+- [ ] cli guy "hey kan" - console command that allows for CLI command apps, (mainly for file/folder setup tasks,ie: create etc. and then it installs with boilerplate code, then users can just  "Search for $zz_boilerplate and then change it with their content or its tied to front end for via AJAX )
+- php cli commands for git, backing up directories , archving, zzWIP, which makes uncommited "working_dir" / sandbox , etc. 
+-  
 - [ ] File / Media management
 - [ ] Seed the data with factory , seeders etc
 - [ ] Placeholder images / skeletons for dynamic content
 - [ ] REST API
 - [ ] ADMIN PANEL
 - [ ] CRUD
+- [ ] HTTP requesting with guzzlehttp or symphony web crawler, or puppeteer, etc.
+- 
 
 ## Kantent Management CMS Features
 
