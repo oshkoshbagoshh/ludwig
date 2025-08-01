@@ -36,7 +36,8 @@ function getPartnerships()
             'name' => 'Javadio',
             'description' => 'Javadio is a technology resource hub for Music Producers, powered by Kantent CMS',
             'logo' => '/images/partners/aj.svg',
-            'website' => 'javadio.io'
+            'website' => '#',
+
         ]
     ];
 
